@@ -1,26 +1,15 @@
-# Node.js
-node_modules/
-dist/
+# Node
+node_modules
 .env
-
-# TypeScript
-*.tsbuildinfo
-
-# Logs
-logs/
+dist
+.cache
 *.log
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
 
-# Optional: VSCode settings
-.vscode/
-
-# Jest test coverage
-coverage/
-
-# macOS system files
+# OS
 .DS_Store
 
-# Optional: OS-specific files
-Thumbs.db
+# Jest coverage
+coverage/
+
+# VSCode
+.vscode/
