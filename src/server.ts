@@ -1,5 +1,6 @@
 import Fastify from "fastify";
 import dotenv from "dotenv";
+import { getSpotifyToken } from "./services/spotifyAuth";
 
 dotenv.config();
 
@@ -7,6 +8,11 @@ const fastifyInstance = Fastify({ logger: true });
 
 fastifyInstance.get("/ping", async (request, reply) => {
     return { pong: true };
+});
+
+fastifyInstance.get("/spotify-token", async (_, reply) => {
+    const token = await getSpotifyToken();
+    reply.send({ token });
 });
 
 const server = async () => {
