@@ -2,20 +2,19 @@ import Fastify from "fastify";
 import fastifyEnv from "@fastify/env";
 
 import fastifyEnvOptions from "./plugins/env";
-import { getSpotifyToken } from "./services/spotifyAuth";
+
+import healthRoute from "./routes/heath.route";
+import playlistRoutes from "./routes/playlist.route";
 
 async function buildApp() {
     const fastifyInstance = Fastify({ logger: true });
 
+    // Register Plugins
     await fastifyInstance.register(fastifyEnv, fastifyEnvOptions);
-    const config = fastifyInstance.config;
 
-    fastifyInstance.get("/ping", async () => ({ pong: true }));
-
-    fastifyInstance.get("/spotify-token", async (_, reply) => {
-        const token = await getSpotifyToken(config);
-        reply.send({ token });
-    });
+    // Register Routes
+    fastifyInstance.register(healthRoute);
+    fastifyInstance.register(playlistRoutes);
 
     return fastifyInstance;
 }
@@ -40,4 +39,4 @@ const server = async () => {
 
 server();
 
-export default server;
+export default buildApp;

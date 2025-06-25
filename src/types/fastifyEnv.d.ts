@@ -1,7 +1,7 @@
-import fastify from "fastify";
+import "fastify";
 
 declare module "fastify" {
-    interface FastifyInstance extends fastify {
+    interface FastifyInstance {
         config: EnvConfig;
     }
 }
