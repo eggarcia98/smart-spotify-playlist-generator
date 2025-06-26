@@ -1,0 +1,61 @@
+TAP version 14
+{"level":30,"time":1750911595445,"pid":40063,"hostname":"localhost","msg":"Server listening at http://127.0.0.1:3000"}
+Server is running at http://localhost:3000
+{"level":30,"time":1750911595445,"pid":40063,"hostname":"localhost","msg":"Server listening at http://192.168.1.118:3000"}
+{"level":30,"time":1750911595448,"pid":40063,"hostname":"localhost","reqId":"req-1","req":{"method":"GET","url":"/ping","host":"127.0.0.1:51974","remoteAddress":"::ffff:127.0.0.1","remotePort":51975},"msg":"incoming request"}
+{"level":30,"time":1750911595449,"pid":40063,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":1.377709150314331,"msg":"request completed"}
+# Subtest: GET /ping helth response
+    ok 1 - Response status code should be 200
+    1..1
+ok 1 - GET /ping helth response # time=21.511ms
+
+{"level":30,"time":1750911595457,"pid":40063,"hostname":"localhost","reqId":"req-1","req":{"method":"GET","url":"/playlist-recommendation","host":"127.0.0.1:51976","remoteAddress":"::ffff:127.0.0.1","remotePort":51977},"msg":"incoming request"}
+{"level":30,"time":1750911595457,"pid":40063,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":0.12908291816711426,"msg":"request completed"}
+# Subtest: GET /playlist-recommendation returns recommendations
+    ok 1 - Response status code should be 200
+    ok 2 - Response body.playlist should be an array
+    not ok 3 - Response body.list should be an string
+      ---
+      compare: ===
+      at:
+        fileName: tests/routes/playlist.test.ts
+        lineNumber: 37
+        columnNumber: 7
+        typeName: Test
+      stack: |
+        Test.<anonymous> (tests/routes/playlist.test.ts:37:7)
+      source: |2
+                "Response body.playlist should be an array"
+            );
+            t.type(
+        ------^
+                response?.body?.link,
+                "string",
+      diff: |
+        --- expected
+        +++ actual
+        @@ -1,1 +1,1 @@
+        -string
+        +undefined
+      ...
+    
+    1..3
+not ok 2 - GET /playlist-recommendation returns recommendations # time=12.144ms
+  ---
+  at:
+    fileName: tests/routes/playlist.test.ts
+    lineNumber: 20
+    columnNumber: 5
+    typeName: Object
+  source: >
+    });
+  
+  
+    tap.test("GET /playlist-recommendation returns recommendations", async (t) =>
+    {
+  
+    ----^
+        const fastifyTestApp = await buildApp();
+        t.teardown(() => fastifyTestApp.close());
+  ...
+

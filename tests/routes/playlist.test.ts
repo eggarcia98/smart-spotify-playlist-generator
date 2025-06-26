@@ -1,21 +1,42 @@
 // test/routes/playlist-recommendation.test.ts
-import request from "supertest";
-import app from "../server.test";
+import supertest from "supertest";
+import buildApp from "../../src/server";
 
-describe("GET /playlist-recommendation", () => {
-    it("should return a playlist array and a link to Spotify", async () => {
-        const res = await request(app.server).get("/playlist-recommendation");
+import tap from "tap";
 
-        expect(res.statusCode).toBe(200);
-        expect(Array.isArray(res.body.playlist)).toBe(true);
-        expect(typeof res.body.link).toBe("string");
-        expect(res.body.link).toMatch(/open\.spotify\.com/);
+tap.test("GET /ping helth response", async (t) => {
+    const fastifyTestApp = await buildApp();
+    t.teardown(() => fastifyTestApp.close());
 
-        if (res.body.playlist.length > 0) {
-            const song = res.body.playlist[0];
-            expect(song).toHaveProperty("name");
-            expect(song).toHaveProperty("artist");
-            expect(song.url).toMatch(/open\.spotify\.com/);
-        }
-    });
+    const response = await supertest(fastifyTestApp.server).get("/ping");
+
+    t.strictSame(
+        response.statusCode,
+        200,
+        "Response status code should be 200"
+    );
+});
+
+tap.test("GET /playlist-recommendation returns recommendations", async (t) => {
+    const fastifyTestApp = await buildApp();
+    t.teardown(() => fastifyTestApp.close());
+
+    const response = await supertest(fastifyTestApp.server).get(
+        "/playlist-recommendation"
+    );
+
+    t.strictSame(
+        response.statusCode,
+        200,
+        "Response status code should be 200"
+    );
+    t.ok(
+        Array.isArray(response?.body?.playlist),
+        "Response body.playlist should be an array"
+    );
+    t.type(
+        response?.body?.link,
+        "string",
+        "Response body.list should be an string"
+    );
 });

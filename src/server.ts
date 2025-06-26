@@ -13,9 +13,10 @@ async function buildApp() {
     await fastifyInstance.register(fastifyEnv, fastifyEnvOptions);
 
     // Register Routes
-    fastifyInstance.register(healthRoute);
+    await fastifyInstance.register(healthRoute);
     fastifyInstance.register(playlistRoutes);
 
+    await fastifyInstance.ready();
     return fastifyInstance;
 }
 
