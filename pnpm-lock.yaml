@@ -23,9 +23,6 @@ importers:
       fastify-plugin:
         specifier: ^5.0.1
         version: 5.0.1
-      tap:
-        specifier: ^21.1.0
-        version: 21.1.0(@types/node@24.0.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)
     devDependencies:
       '@types/dotenv':
         specifier: ^8.2.3
@@ -48,15 +45,15 @@ importers:
       eslint-plugin-prettier:
         specifier: ^5.5.0
         version: 5.5.1(eslint-config-prettier@10.1.5(eslint@9.29.0))(eslint@9.29.0)(prettier@3.6.1)
-      jest:
-        specifier: ^30.0.2
-        version: 30.0.3(@types/node@24.0.4)(ts-node@10.9.2(@types/node@24.0.4)(typescript@5.8.3))
       prettier:
         specifier: ^3.5.3
         version: 3.6.1
       supertest:
         specifier: ^7.1.1
         version: 7.1.1
+      tap:
+        specifier: ^21.1.0
+        version: 21.1.0(@types/node@24.0.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)
       ts-jest:
         specifier: ^29.4.0
         version: 29.4.0(@babel/core@7.27.4)(@jest/transform@30.0.2)(@jest/types@30.0.1)(babel-jest@30.0.2(@babel/core@7.27.4))(jest-util@30.0.2)(jest@30.0.3(@types/node@24.0.4)(ts-node@10.9.2(@types/node@24.0.4)(typescript@5.8.3)))(typescript@5.8.3)
@@ -867,14 +864,8 @@ packages:
   '@tsconfig/node14@1.0.3':
     resolution: {integrity: sha512-ysT8mhdixWK6Hw3i1V2AeRqZ5WfXg1G43mqoYlM2nc6388Fq5jcXyr5mRsqViLx/GJYdoL0bfXD8nmF+Zn/Iow==}
 
-  '@tsconfig/node14@14.1.4':
-    resolution: {integrity: sha512-S5G+j19uQt/7wiXFqGapQ1cSYHlAoxYreObGkOmawAknegyUjx8EXngqy6vAitLHqCFu3rzluPlk77pWMD4n1Q==}
-
   '@tsconfig/node16@1.0.4':
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
-
-  '@tsconfig/node16@16.1.4':
-    resolution: {integrity: sha512-tkWPDtk18K2qJK/DhU010f03iDlw+C8qjXvhwZ4KKpJQC4QFOG3r8tIf2q6aWD0mz9N7RcZcaD9SPlrVLKiDoQ==}
 
   '@tsconfig/node18@18.2.4':
     resolution: {integrity: sha512-5xxU8vVs9/FNcvm3gE07fPbn9tl6tqGGWA9tSlwsUEkBxtRnTsNmwrV8gasZ9F/EobaSv9+nu8AxUKccw77JpQ==}
@@ -3566,8 +3557,8 @@ snapshots:
   '@isaacs/ts-node-temp-fork-for-pr-2009@10.9.7(@types/node@24.0.4)(typescript@5.5.4)':
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node14': 14.1.4
-      '@tsconfig/node16': 16.1.4
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
       '@tsconfig/node18': 18.2.4
       '@tsconfig/node20': 20.1.6
       '@types/node': 24.0.4
@@ -3582,8 +3573,8 @@ snapshots:
   '@isaacs/ts-node-temp-fork-for-pr-2009@10.9.7(@types/node@24.0.4)(typescript@5.8.3)':
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node14': 14.1.4
-      '@tsconfig/node16': 16.1.4
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
       '@tsconfig/node18': 18.2.4
       '@tsconfig/node20': 20.1.6
       '@types/node': 24.0.4
@@ -4195,11 +4186,7 @@ snapshots:
 
   '@tsconfig/node14@1.0.3': {}
 
-  '@tsconfig/node14@14.1.4': {}
-
   '@tsconfig/node16@1.0.4': {}
-
-  '@tsconfig/node16@16.1.4': {}
 
   '@tsconfig/node18@18.2.4': {}
 

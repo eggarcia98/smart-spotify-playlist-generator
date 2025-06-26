@@ -38,6 +38,8 @@ const server = async () => {
     }
 };
 
-server();
+if (require.main === module) {
+    server();
+}
 
 export default buildApp;

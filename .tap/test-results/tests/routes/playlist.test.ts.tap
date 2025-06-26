@@ -1,16 +1,13 @@
 TAP version 14
-{"level":30,"time":1750911595445,"pid":40063,"hostname":"localhost","msg":"Server listening at http://127.0.0.1:3000"}
-Server is running at http://localhost:3000
-{"level":30,"time":1750911595445,"pid":40063,"hostname":"localhost","msg":"Server listening at http://192.168.1.118:3000"}
-{"level":30,"time":1750911595448,"pid":40063,"hostname":"localhost","reqId":"req-1","req":{"method":"GET","url":"/ping","host":"127.0.0.1:51974","remoteAddress":"::ffff:127.0.0.1","remotePort":51975},"msg":"incoming request"}
-{"level":30,"time":1750911595449,"pid":40063,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":1.377709150314331,"msg":"request completed"}
+{"level":30,"time":1750911998792,"pid":46163,"hostname":"localhost","reqId":"req-1","req":{"method":"GET","url":"/ping","host":"127.0.0.1:52064","remoteAddress":"::ffff:127.0.0.1","remotePort":52065},"msg":"incoming request"}
+{"level":30,"time":1750911998794,"pid":46163,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":1.3318750858306885,"msg":"request completed"}
 # Subtest: GET /ping helth response
     ok 1 - Response status code should be 200
     1..1
-ok 1 - GET /ping helth response # time=21.511ms
+ok 1 - GET /ping helth response # time=32.085ms
 
-{"level":30,"time":1750911595457,"pid":40063,"hostname":"localhost","reqId":"req-1","req":{"method":"GET","url":"/playlist-recommendation","host":"127.0.0.1:51976","remoteAddress":"::ffff:127.0.0.1","remotePort":51977},"msg":"incoming request"}
-{"level":30,"time":1750911595457,"pid":40063,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":0.12908291816711426,"msg":"request completed"}
+{"level":30,"time":1750911998802,"pid":46163,"hostname":"localhost","reqId":"req-1","req":{"method":"GET","url":"/playlist-recommendation","host":"127.0.0.1:52066","remoteAddress":"::ffff:127.0.0.1","remotePort":52067},"msg":"incoming request"}
+{"level":30,"time":1750911998802,"pid":46163,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":0.12599992752075195,"msg":"request completed"}
 # Subtest: GET /playlist-recommendation returns recommendations
     ok 1 - Response status code should be 200
     ok 2 - Response body.playlist should be an array
@@ -40,7 +37,7 @@ ok 1 - GET /ping helth response # time=21.511ms
       ...
     
     1..3
-not ok 2 - GET /playlist-recommendation returns recommendations # time=12.144ms
+not ok 2 - GET /playlist-recommendation returns recommendations # time=12.265ms
   ---
   at:
     fileName: tests/routes/playlist.test.ts
@@ -59,3 +56,4 @@ not ok 2 - GET /playlist-recommendation returns recommendations # time=12.144ms
         t.teardown(() => fastifyTestApp.close());
   ...
 
+1..2
