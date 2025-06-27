@@ -1,43 +1,186 @@
 TAP version 14
-{"level":30,"time":1750911998792,"pid":46163,"hostname":"localhost","reqId":"req-1","req":{"method":"GET","url":"/ping","host":"127.0.0.1:52064","remoteAddress":"::ffff:127.0.0.1","remotePort":52065},"msg":"incoming request"}
-{"level":30,"time":1750911998794,"pid":46163,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":1.3318750858306885,"msg":"request completed"}
+{"level":30,"time":1751008416698,"pid":56771,"hostname":"localhost","reqId":"req-1","req":{"method":"GET","url":"/ping","host":"127.0.0.1:55778","remoteAddress":"::ffff:127.0.0.1","remotePort":55779},"msg":"incoming request"}
+{"level":30,"time":1751008416699,"pid":56771,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":1.3302500247955322,"msg":"request completed"}
 # Subtest: GET /ping helth response
     ok 1 - Response status code should be 200
     1..1
-ok 1 - GET /ping helth response # time=32.085ms
+ok 1 - GET /ping helth response # time=36.917ms
 
-{"level":30,"time":1750911998802,"pid":46163,"hostname":"localhost","reqId":"req-1","req":{"method":"GET","url":"/playlist-recommendation","host":"127.0.0.1:52066","remoteAddress":"::ffff:127.0.0.1","remotePort":52067},"msg":"incoming request"}
-{"level":30,"time":1750911998802,"pid":46163,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":0.12599992752075195,"msg":"request completed"}
 # Subtest: GET /playlist-recommendation returns recommendations
-    ok 1 - Response status code should be 200
-    ok 2 - Response body.playlist should be an array
-    not ok 3 - Response body.list should be an string
+{"level":30,"time":1751008416709,"pid":56771,"hostname":"localhost","reqId":"req-1","req":{"method":"POST","url":"/playlist-recommendation","host":"127.0.0.1:55780","remoteAddress":"::ffff:127.0.0.1","remotePort":55781},"msg":"incoming request"}
+{"level":30,"time":1751008416709,"pid":56771,"hostname":"localhost","reqId":"req-1","msg":"Route POST:/playlist-recommendation not found"}
+{"level":30,"time":1751008416709,"pid":56771,"hostname":"localhost","reqId":"req-1","res":{"statusCode":404},"responseTime":0.8272500038146973,"msg":"request completed"}
+    # Subtest: ✅ Accepts valid request body
+        not ok 1 - Should return 200 for valid request
+          ---
+          compare: ===
+          at:
+            fileName: tests/routes/playlist.test.ts
+            lineNumber: 42
+            columnNumber: 11
+            typeName: Test
+          stack: |
+            Test.<anonymous> (tests/routes/playlist.test.ts:42:11)
+          source: |2
+                        .send(validBody);
+          
+                    t.equal(res.statusCode, 200, "Should return 200 for valid request");
+            ----------^
+                    t.ok(res.body.playlist, "Should return a playlist");
+                    t.ok(res.body.link, "Should return a link");
+          diff: |
+            --- expected
+            +++ actual
+            @@ -1,1 +1,1 @@
+            -200
+            +404
+          ...
+        
+        not ok 2 - Should return a playlist
+          ---
+          at:
+            fileName: tests/routes/playlist.test.ts
+            lineNumber: 43
+            columnNumber: 11
+            typeName: Test
+          stack: |
+            Test.<anonymous> (tests/routes/playlist.test.ts:43:11)
+          source: |2
+          
+                    t.equal(res.statusCode, 200, "Should return 200 for valid request");
+                    t.ok(res.body.playlist, "Should return a playlist");
+            ----------^
+                    t.ok(res.body.link, "Should return a link");
+                });
+          ...
+        
+        not ok 3 - Should return a link
+          ---
+          at:
+            fileName: tests/routes/playlist.test.ts
+            lineNumber: 44
+            columnNumber: 11
+            typeName: Test
+          stack: |
+            Test.<anonymous> (tests/routes/playlist.test.ts:44:11)
+          source: |2
+                    t.equal(res.statusCode, 200, "Should return 200 for valid request");
+                    t.ok(res.body.playlist, "Should return a playlist");
+                    t.ok(res.body.link, "Should return a link");
+            ----------^
+                });
+          ...
+        
+        1..3
+    not ok 1 - ✅ Accepts valid request body # time=15.187ms
       ---
-      compare: ===
       at:
         fileName: tests/routes/playlist.test.ts
-        lineNumber: 37
+        lineNumber: 24
         columnNumber: 7
         typeName: Test
-      stack: |
-        Test.<anonymous> (tests/routes/playlist.test.ts:37:7)
       source: |2
-                "Response body.playlist should be an array"
-            );
-            t.type(
+            t.teardown(() => fastifyTestApp.close());
+      
+            t.test("✅ Accepts valid request body", async (t) => {
         ------^
-                response?.body?.link,
-                "string",
-      diff: |
-        --- expected
-        +++ actual
-        @@ -1,1 +1,1 @@
-        -string
-        +undefined
+                const validBody = {
+                    defaultPreferences: {
+      ...
+    
+{"level":30,"time":1751008416727,"pid":56771,"hostname":"localhost","reqId":"req-2","req":{"method":"POST","url":"/playlist-recommendation","host":"127.0.0.1:55782","remoteAddress":"::ffff:127.0.0.1","remotePort":55783},"msg":"incoming request"}
+{"level":30,"time":1751008416727,"pid":56771,"hostname":"localhost","reqId":"req-2","msg":"Route POST:/playlist-recommendation not found"}
+{"level":30,"time":1751008416727,"pid":56771,"hostname":"localhost","reqId":"req-2","res":{"statusCode":404},"responseTime":0.42925000190734863,"msg":"request completed"}
+    # Subtest: ❌ Rejects invalid languageDistribution format
+        not ok 1 - Should return 400 for invalid lang key
+          ---
+          compare: ===
+          at:
+            fileName: tests/routes/playlist.test.ts
+            lineNumber: 58
+            columnNumber: 11
+            typeName: Test
+          stack: |
+            Test.<anonymous> (tests/routes/playlist.test.ts:58:11)
+          source: >2
+                        .send(invalidBody);
+          
+                    t.equal(res.statusCode, 400, "Should return 400 for invalid lang key");
+            ----------^
+                });
+          diff: |
+            --- expected
+            +++ actual
+            @@ -1,1 +1,1 @@
+            -400
+            +404
+          ...
+        
+        1..1
+    not ok 2 - ❌ Rejects invalid languageDistribution format # time=6.329ms
+      ---
+      at:
+        fileName: tests/routes/playlist.test.ts
+        lineNumber: 47
+        columnNumber: 7
+        typeName: Test
+      source: |2
+            });
+      
+            t.test("❌ Rejects invalid languageDistribution format", async (t) => {
+        ------^
+                const invalidBody = {
+                    defaultPreferences: {
+      ...
+    
+{"level":30,"time":1751008416731,"pid":56771,"hostname":"localhost","reqId":"req-3","req":{"method":"POST","url":"/playlist-recommendation","host":"127.0.0.1:55784","remoteAddress":"::ffff:127.0.0.1","remotePort":55785},"msg":"incoming request"}
+{"level":30,"time":1751008416731,"pid":56771,"hostname":"localhost","reqId":"req-3","msg":"Route POST:/playlist-recommendation not found"}
+{"level":30,"time":1751008416731,"pid":56771,"hostname":"localhost","reqId":"req-3","res":{"statusCode":404},"responseTime":0.12241601943969727,"msg":"request completed"}
+    # Subtest: ❌ Rejects wrong type for moodsIncluded
+        not ok 1 - Should return 400 for wrong array type
+          ---
+          compare: ===
+          at:
+            fileName: tests/routes/playlist.test.ts
+            lineNumber: 72
+            columnNumber: 11
+            typeName: Test
+          stack: |
+            Test.<anonymous> (tests/routes/playlist.test.ts:72:11)
+          source: >2
+                        .send(invalidBody);
+          
+                    t.equal(res.statusCode, 400, "Should return 400 for wrong array type");
+            ----------^
+                });
+            });
+          diff: |
+            --- expected
+            +++ actual
+            @@ -1,1 +1,1 @@
+            -400
+            +404
+          ...
+        
+        1..1
+    not ok 3 - ❌ Rejects wrong type for moodsIncluded # time=2.585ms
+      ---
+      at:
+        fileName: tests/routes/playlist.test.ts
+        lineNumber: 61
+        columnNumber: 7
+        typeName: Test
+      source: |2
+            });
+      
+            t.test("❌ Rejects wrong type for moodsIncluded", async (t) => {
+        ------^
+                const invalidBody = {
+                    defaultPreferences: {
       ...
     
     1..3
-not ok 2 - GET /playlist-recommendation returns recommendations # time=12.265ms
+not ok 2 - GET /playlist-recommendation returns recommendations # time=30.631ms
   ---
   at:
     fileName: tests/routes/playlist.test.ts

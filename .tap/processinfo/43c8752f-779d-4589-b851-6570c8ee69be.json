@@ -1,5 +1,5 @@
 {
-  "date": "2025-06-26T04:26:38.223Z",
+  "date": "2025-06-27T07:13:36.042Z",
   "argv": [
     "/Users/egarcia/.nvm/versions/node/v20.15.1/bin/node",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/tests/routes/playlist.test.ts"
@@ -12,10 +12,10 @@
   ],
   "NODE_OPTIONS": "\"--import=file:///Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@tapjs+processinfo@3.1.8/node_modules/@tapjs/processinfo/dist/esm/import.mjs\"",
   "cwd": "/Users/egarcia/Repositories/smart-spotify-playlist-generator",
-  "pid": 46163,
-  "ppid": 46153,
+  "pid": 56771,
+  "ppid": 56763,
   "parent": null,
-  "uuid": "fcfc0db1-21b2-4116-a36a-0698e845c24d",
+  "uuid": "43c8752f-779d-4589-b851-6570c8ee69be",
   "files": [
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/tests/routes/playlist.test.ts",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@tapjs+typescript@3.1.0_@tapjs+core@4.0.1_@types+node@24.0.4_react-dom@18.3.1_react@18._d00570fa72b08cc7f0d47c59d885b74c/node_modules/@tapjs/typescript/dist/esm/import.mjs",
@@ -40,8 +40,8 @@
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/resolve-conditional-value.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/resolve-import.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/is-windows.js",
-    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@tapjs+stack@4.0.0/node_modules/@tapjs/stack/dist/esm/parse.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/get-conditional-values-list.js",
+    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@tapjs+stack@4.0.0/node_modules/@tapjs/stack/dist/esm/parse.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/errors.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/get-named-exports-list.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/read-pkg.js",
@@ -53,9 +53,9 @@
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/to-file-url.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/resolve-dependency-export.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/resolve-package-import.js",
+    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/dist/esm/index.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/read-json.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/find-star-match.js",
-    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/dist/esm/index.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/walk-up-path@4.0.0/node_modules/walk-up-path/dist/esm/index.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/minimatch@10.0.3/node_modules/minimatch/dist/esm/index.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/dist/esm/glob.js",
@@ -69,9 +69,9 @@
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/path-scurry@2.0.0/node_modules/path-scurry/dist/esm/index.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/dist/esm/pattern.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/dist/esm/walker.js",
+    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/minimatch@10.0.3/node_modules/minimatch/dist/esm/brace-expressions.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@isaacs+balanced-match@4.0.1/node_modules/@isaacs/balanced-match/dist/esm/index.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/lru-cache@11.1.0/node_modules/lru-cache/dist/esm/index.js",
-    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/minimatch@10.0.3/node_modules/minimatch/dist/esm/brace-expressions.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/minipass@7.1.2/node_modules/minipass/dist/esm/index.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/dist/esm/processor.js",
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@tapjs+mock@4.0.1_@tapjs+core@4.0.1_@types+node@24.0.4_react-dom@18.3.1_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/loader.mjs",
@@ -143,11 +143,11 @@
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/is-windows.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/src/is-windows.ts"
     ],
-    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@tapjs+stack@4.0.0/node_modules/@tapjs/stack/dist/esm/parse.js": [
-      "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@tapjs+stack@4.0.0/node_modules/@tapjs/stack/src/parse.ts"
-    ],
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/get-conditional-values-list.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/src/get-conditional-values-list.ts"
+    ],
+    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@tapjs+stack@4.0.0/node_modules/@tapjs/stack/dist/esm/parse.js": [
+      "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@tapjs+stack@4.0.0/node_modules/@tapjs/stack/src/parse.ts"
     ],
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/errors.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/src/errors.ts"
@@ -182,14 +182,14 @@
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/resolve-package-import.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/src/resolve-package-import.ts"
     ],
+    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/dist/esm/index.js": [
+      "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/src/index.ts"
+    ],
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/read-json.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/src/read-json.ts"
     ],
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/dist/esm/find-star-match.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/resolve-import@2.0.0/node_modules/resolve-import/src/find-star-match.ts"
-    ],
-    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/dist/esm/index.js": [
-      "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/src/index.ts"
     ],
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/walk-up-path@4.0.0/node_modules/walk-up-path/dist/esm/index.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/walk-up-path@4.0.0/node_modules/walk-up-path/src/index.ts"
@@ -230,14 +230,14 @@
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/dist/esm/walker.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/src/walker.ts"
     ],
+    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/minimatch@10.0.3/node_modules/minimatch/dist/esm/brace-expressions.js": [
+      "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/minimatch@10.0.3/node_modules/minimatch/src/brace-expressions.ts"
+    ],
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@isaacs+balanced-match@4.0.1/node_modules/@isaacs/balanced-match/dist/esm/index.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/@isaacs+balanced-match@4.0.1/node_modules/@isaacs/balanced-match/src/index.ts"
     ],
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/lru-cache@11.1.0/node_modules/lru-cache/dist/esm/index.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/lru-cache@11.1.0/node_modules/lru-cache/src/index.ts"
-    ],
-    "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/minimatch@10.0.3/node_modules/minimatch/dist/esm/brace-expressions.js": [
-      "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/minimatch@10.0.3/node_modules/minimatch/src/brace-expressions.ts"
     ],
     "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/minipass@7.1.2/node_modules/minipass/dist/esm/index.js": [
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/minipass@7.1.2/node_modules/minipass/src/index.ts"
@@ -246,9 +246,9 @@
       "/Users/egarcia/Repositories/smart-spotify-playlist-generator/node_modules/.pnpm/glob@11.0.3/node_modules/glob/src/processor.ts"
     ]
   },
-  "root": "fcfc0db1-21b2-4116-a36a-0698e845c24d",
+  "root": "43c8752f-779d-4589-b851-6570c8ee69be",
   "externalID": "tests/routes/playlist.test.ts",
   "code": 1,
   "signal": null,
-  "runtime": 589.165459
+  "runtime": 700.2805
 }
