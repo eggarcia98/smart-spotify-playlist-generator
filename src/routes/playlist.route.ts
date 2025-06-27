@@ -2,12 +2,14 @@ import { FastifyPluginAsync } from "fastify";
 import { FromSchema } from "json-schema-to-ts";
 import { getSpotifyToken } from "../services/spotifyAuth";
 
-const playlistRecommendationSchema = {
+const playlistRequestBodySchema = {
     type: "object",
+    additionalProperties: false,
     required: [],
     properties: {
         generalPreferences: {
             type: "object",
+            additionalProperties: false,
             required: [],
             properties: {
                 languageDistribution: {
@@ -25,16 +27,12 @@ const playlistRecommendationSchema = {
                 genresInclude: {
                     type: "array",
                     items: { type: "string" },
-                    default: [],
                 },
                 moodsIncluded: {
                     type: "array",
                     items: { type: "string" },
-                    default: ["none"],
                 },
-                situationDescription: {
-                    type: "string",
-                },
+                situationDescription: { type: "string" },
                 limitDurationInMinutes: {
                     type: "integer",
                     minimum: 30,
@@ -42,43 +40,40 @@ const playlistRecommendationSchema = {
                     default: 300,
                 },
             },
-
-            additionalProperties: false,
         },
         userPreferences: {
             type: "object",
+            additionalProperties: false,
             required: [],
             properties: {
-                useMyTopSongs: {
-                    type: "boolean",
-                    default: false,
-                },
+                useMyTopSongs: { type: "boolean", default: false },
                 limitDurationInMinutes: {
                     type: "integer",
                     minimum: 0,
                     default: 60,
                 },
             },
-            additionalProperties: false,
         },
     },
-    additionalProperties: false,
 } as const;
 
 type PlaylistRecommendationRequest = FromSchema<
-    typeof playlistRecommendationSchema
+    typeof playlistRequestBodySchema
 >;
 
-const playlistRoutes: FastifyPluginAsync = async (fastify) => {
+export const playlistRoutes: FastifyPluginAsync = async (fastify) => {
     fastify.post<{ Body: PlaylistRecommendationRequest }>(
         "/playlist-recommendation",
         {
             schema: {
-                body: playlistRecommendationSchema,
+                body: playlistRequestBodySchema, // ✅ correct usage
             },
         },
-        async (_, reply) => {
+        async (request, reply) => {
             const envs = fastify.getEnvs<EnvConfig>();
+
+            // Access request.body safely here
+            const { generalPreferences, userPreferences } = request.body;
 
             reply.send({ playlist: ["Song 1", "Song 2"] });
         }

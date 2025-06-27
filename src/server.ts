@@ -7,8 +7,27 @@ import healthRoute from "./routes/heath.route";
 import playlistRoutes from "./routes/playlist.route";
 
 async function buildApp() {
-    const fastifyInstance = Fastify({ logger: true });
+    const fastifyInstance = Fastify({
+        logger: true,
+        ajv: {
+            customOptions: {
+                allErrors: true,
+                strict: true,
+                coerceTypes: false, // 👈 STOP coercing types like strings into arrays
+            },
+        },
+    });
 
+    fastifyInstance.setErrorHandler((err, req, res) => {
+        if (err.validation) {
+            console.error("Validation error:", err.validation);
+        }
+        res.status(400).send({
+            error: "Invalid request",
+            details: err.validation,
+        });
+    });
+    
     // Register Plugins
     await fastifyInstance.register(fastifyEnv, fastifyEnvOptions);
 
