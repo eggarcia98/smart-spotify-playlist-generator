@@ -23,7 +23,7 @@ tap.test("GET /playlist-recommendation returns recommendations", async (t) => {
 
     t.test("✅ Accepts valid request body", async (t) => {
         const validBody = {
-            defaultPreferences: {
+            generalPreferences: {
                 languageDistribution: { en: 80, es: 20 },
                 genresInclude: ["reggaeton", "pop"],
                 moodsIncluded: ["happy"],
@@ -46,7 +46,7 @@ tap.test("GET /playlist-recommendation returns recommendations", async (t) => {
 
     t.test("❌ Rejects invalid languageDistribution format", async (t) => {
         const invalidBody = {
-            defaultPreferences: {
+            generalPreferences: {
                 languageDistribution: { english: 100 },
             },
         };
@@ -60,7 +60,7 @@ tap.test("GET /playlist-recommendation returns recommendations", async (t) => {
 
     t.test("❌ Rejects wrong type for moodsIncluded", async (t) => {
         const invalidBody = {
-            defaultPreferences: {
+            generalPreferences: {
                 moodsIncluded: "romantic",
             },
         };
