@@ -72,8 +72,13 @@ export const playlistRoutes: FastifyPluginAsync = async (fastify) => {
         async (request, reply) => {
             const envs = fastify.getEnvs<EnvConfig>();
 
+            console.log("Received request for playlist recommendation");
             // Access request.body safely here
             const { generalPreferences, userPreferences } = request.body;
+            console.log("Received preferences:", {
+                generalPreferences,
+                userPreferences,
+            });
 
             reply.send({ playlist: ["Song 1", "Song 2"] });
         }

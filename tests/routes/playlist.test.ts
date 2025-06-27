@@ -18,16 +18,16 @@ tap.test("GET /ping helth response", async (t) => {
 });
 
 tap.test("POST /playlist-recommendation returns recommendations", async (t) => {
-    const fastifyTestApp = await buildApp();
-    t.teardown(() => fastifyTestApp.close());
-
     t.test("✅ Accepts valid request body", async (t) => {
+        const fastifyTestApp = await buildApp();
+        t.teardown(() => fastifyTestApp.close());
+
         const validBody = {
             generalPreferences: {
                 languageDistribution: { en: 80, es: 20 },
                 genresInclude: ["reggaeton", "pop"],
                 moodsIncluded: ["happy"],
-                situationSongs: ["latin party"],
+                situationDescription: "latin party"
             },
             userPreferences: {
                 useMyTopSongs: true,
@@ -45,6 +45,9 @@ tap.test("POST /playlist-recommendation returns recommendations", async (t) => {
     });
 
     t.test("❌ Rejects invalid languageDistribution format", async (t) => {
+        const fastifyTestApp = await buildApp();
+        t.teardown(() => fastifyTestApp.close());
+
         const invalidBody = {
             generalPreferences: {
                 languageDistribution: { english: 100 },
@@ -59,6 +62,9 @@ tap.test("POST /playlist-recommendation returns recommendations", async (t) => {
     });
 
     t.test("❌ Rejects wrong type for moodsIncluded", async (t) => {
+        const fastifyTestApp = await buildApp();
+        t.teardown(() => fastifyTestApp.close());
+
         const invalidBody = {
             generalPreferences: {
                 moodsIncluded: "romantic",

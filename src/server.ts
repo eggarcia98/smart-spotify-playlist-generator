@@ -13,12 +13,14 @@ async function buildApp() {
             customOptions: {
                 allErrors: true,
                 strict: true,
-                coerceTypes: false, // 👈 STOP coercing types like strings into arrays
+                coerceTypes: false, // 👈 STOP coercing types like strings into arrays,
+                removeAdditional: false, // 👈 Remove additional properties not defined in the schema
             },
         },
     });
 
     fastifyInstance.setErrorHandler((err, req, res) => {
+        console.log({ body: req.body });
         if (err.validation) {
             console.error("Validation error:", err.validation);
         }
