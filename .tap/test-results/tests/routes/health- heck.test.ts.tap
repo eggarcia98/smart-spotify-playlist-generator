@@ -1,0 +1,9 @@
+TAP version 14
+{"level":30,"time":1751531187976,"pid":85951,"hostname":"localhost","reqId":"req-1","req":{"method":"GET","url":"/ping","host":"127.0.0.1:49569","remoteAddress":"::ffff:127.0.0.1","remotePort":49571},"msg":"incoming request"}
+{"level":30,"time":1751531187978,"pid":85951,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":1.4052088260650635,"msg":"request completed"}
+# Subtest: GET /ping helth response
+    ok 1 - Response status code should be 200
+    1..1
+ok 1 - GET /ping helth response # time=45.745ms
+
+1..1
