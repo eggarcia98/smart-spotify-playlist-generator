@@ -1,6 +1,6 @@
 TAP version 14
 # Subtest: POST /playlist-recommendation returns recommendations
-{"level":30,"time":1751531187977,"pid":85952,"hostname":"localhost","reqId":"req-1","req":{"method":"POST","url":"/playlist-recommendation","host":"127.0.0.1:49570","remoteAddress":"::ffff:127.0.0.1","remotePort":49572},"msg":"incoming request"}
+{"level":30,"time":1751942645400,"pid":31441,"hostname":"localhost","reqId":"req-1","req":{"method":"POST","url":"/playlist-recommendation","host":"127.0.0.1:63192","remoteAddress":"::ffff:127.0.0.1","remotePort":63194},"msg":"incoming request"}
 Received request for playlist recommendation
 Received preferences: {
   generalPreferences: {
@@ -12,26 +12,26 @@ Received preferences: {
   },
   userPreferences: { useMyTopSongs: [33mtrue[39m, limitDurationInMinutes: [33m120[39m }
 }
-{"level":30,"time":1751531187981,"pid":85952,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":3.9746251106262207,"msg":"request completed"}
+{"level":30,"time":1751942645406,"pid":31441,"hostname":"localhost","reqId":"req-1","res":{"statusCode":200},"responseTime":5.632208824157715,"msg":"request completed"}
     # Subtest: ✅ Accepts valid request body
         ok 1 - Should return 200 for valid request
         ok 2 - Should return a playlist
         1..2
-    ok 1 - ✅ Accepts valid request body # time=45.82ms
+    ok 1 - ✅ Accepts valid request body # time=47.778ms
     
-{"level":30,"time":1751531187997,"pid":85952,"hostname":"localhost","reqId":"req-1","req":{"method":"POST","url":"/playlist-recommendation","host":"127.0.0.1:49573","remoteAddress":"::ffff:127.0.0.1","remotePort":49574},"msg":"incoming request"}
+{"level":30,"time":1751942645443,"pid":31441,"hostname":"localhost","reqId":"req-1","req":{"method":"POST","url":"/playlist-recommendation","host":"127.0.0.1:63195","remoteAddress":"::ffff:127.0.0.1","remotePort":63196},"msg":"incoming request"}
 {
   body: {
     generalPreferences: { languageDistribution: [36m[Object][39m, limitDurationInMinutes: [33m300[39m }
   }
 }
-{"level":30,"time":1751531187998,"pid":85952,"hostname":"localhost","reqId":"req-1","res":{"statusCode":400},"responseTime":1.374790906906128,"msg":"request completed"}
+{"level":30,"time":1751942645445,"pid":31441,"hostname":"localhost","reqId":"req-1","res":{"statusCode":400},"responseTime":1.5073747634887695,"msg":"request completed"}
     # Subtest: ❌ Rejects invalid languageDistribution format
         ok 1 - Should return 400 for invalid lang key
         1..1
-    ok 2 - ❌ Rejects invalid languageDistribution format # time=12.877ms
+    ok 2 - ❌ Rejects invalid languageDistribution format # time=35.113ms
     
-{"level":30,"time":1751531188009,"pid":85952,"hostname":"localhost","reqId":"req-1","req":{"method":"POST","url":"/playlist-recommendation","host":"127.0.0.1:49575","remoteAddress":"::ffff:127.0.0.1","remotePort":49576},"msg":"incoming request"}
+{"level":30,"time":1751942645461,"pid":31441,"hostname":"localhost","reqId":"req-1","req":{"method":"POST","url":"/playlist-recommendation","host":"127.0.0.1:63197","remoteAddress":"::ffff:127.0.0.1","remotePort":63198},"msg":"incoming request"}
 {
   body: {
     generalPreferences: {
@@ -41,13 +41,13 @@ Received preferences: {
     }
   }
 }
-{"level":30,"time":1751531188009,"pid":85952,"hostname":"localhost","reqId":"req-1","res":{"statusCode":400},"responseTime":0.559290885925293,"msg":"request completed"}
+{"level":30,"time":1751942645461,"pid":31441,"hostname":"localhost","reqId":"req-1","res":{"statusCode":400},"responseTime":0.5550003051757812,"msg":"request completed"}
     # Subtest: ❌ Rejects wrong type for moodsIncluded
         ok 1 - Should return 400 for wrong array type
         1..1
-    ok 3 - ❌ Rejects wrong type for moodsIncluded # time=10.799ms
+    ok 3 - ❌ Rejects wrong type for moodsIncluded # time=16.065ms
     
     1..3
-ok 1 - POST /playlist-recommendation returns recommendations # time=73.872ms
+ok 1 - POST /playlist-recommendation returns recommendations # time=103.149ms
 
 1..1
