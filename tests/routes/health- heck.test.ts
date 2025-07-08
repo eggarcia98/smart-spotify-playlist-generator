@@ -13,6 +13,6 @@ tap.test("GET /ping helth response", async (t) => {
     t.strictSame(
         response.statusCode,
         200,
-        "Response status code should be 200"
+        "Response status code should be 200ss"
     );
 });
