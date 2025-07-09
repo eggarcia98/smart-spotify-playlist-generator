@@ -3,7 +3,6 @@ let tokenExpiresAt = 0;
 
 export const getSpotifyToken = async (envs: EnvConfig): Promise<any> => {
 
-    console.log( accessToken, tokenExpiresAt, envs.SPOTIFY_CLIENT_ID, envs.SPOTIFY_CLIENT_SECRET);
     const now = Date.now();
     if (accessToken && now < tokenExpiresAt) {
         return accessToken;
