@@ -1,7 +1,13 @@
 let accessToken = "";
 let tokenExpiresAt = 0;
 
-export const getSpotifyToken = async (envs: EnvConfig): Promise<any> => {
+interface SpotifyAuthParams {
+    code?: string;
+    redirectUri?: string;
+    codeVerifier?: string;
+}
+
+export const getSpotifyToken = async (envs: EnvConfig, sportifyAuthParams: SpotifyAuthParams): Promise<any> => {
 
     const now = Date.now();
     if (accessToken && now < tokenExpiresAt) {
