@@ -1,5 +1,6 @@
 import Fastify from "fastify";
 import fastifyEnv from "@fastify/env";
+import fastifyCookie from "@fastify/cookie";
 
 import fastifyEnvOptions from "./plugins/env";
 
@@ -32,10 +33,11 @@ async function buildApp() {
     
     // Register Plugins
     await fastifyInstance.register(fastifyEnv, fastifyEnvOptions);
+    await fastifyInstance.register(fastifyCookie);
 
     // Register Routes
     await fastifyInstance.register(healthRoute);
-    fastifyInstance.register(playlistRoutes);
+    await fastifyInstance.register(playlistRoutes);
 
     await fastifyInstance.ready();
     return fastifyInstance;
