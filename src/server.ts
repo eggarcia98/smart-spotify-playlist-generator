@@ -6,6 +6,7 @@ import fastifyEnvOptions from "./plugins/env";
 
 import healthRoute from "./routes/heath.route";
 import playlistRoutes from "./routes/playlist.route";
+import authRoutes from "routes/auth";
 
 async function buildApp() {
     const fastifyInstance = Fastify({
@@ -38,6 +39,7 @@ async function buildApp() {
     // Register Routes
     await fastifyInstance.register(healthRoute);
     await fastifyInstance.register(playlistRoutes);
+    await fastifyInstance.register(authRoutes);
 
     await fastifyInstance.ready();
     return fastifyInstance;
