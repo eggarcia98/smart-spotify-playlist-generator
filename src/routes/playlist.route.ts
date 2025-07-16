@@ -2,6 +2,13 @@ import { FastifyPluginAsync } from "fastify";
 import { FromSchema } from "json-schema-to-ts";
 import { getSpotifyToken } from "../services/spotifyAuth";
 
+interface EnvConfig {
+    SPOTIFY_CLIENT_ID: string;
+    SPOTIFY_CLIENT_SECRET: string;
+    PORT?: string;
+    // add other env vars here
+}
+
 const playlistRequestBodySchema = {
     type: "object",
     additionalProperties: false,
